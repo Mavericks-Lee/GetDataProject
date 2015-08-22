@@ -37,6 +37,6 @@ target[target$activity[]==6,"activity"] <- "Laying"
 ## for each activity and each subject
 final <- cbind(sapply(split(target[1:79],target$activity[]),colMeans),
                sapply(split(target[1:79],target$subject[]),colMeans))
-
+final <- as.data.frame(final)
 ## Export final in txt file
 write.table(final,file="./getdataproject.txt",row.names = FALSE)
